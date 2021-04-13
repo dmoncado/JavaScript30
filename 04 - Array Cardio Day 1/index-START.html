@@ -107,12 +107,25 @@
         const nextGuy = b.passed - b.year;
         return lastGuy > nextGuy ? -1 : 1;
       });
-      console.table(oldest);
+      //bconsole.table(oldest);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+      //en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+      // https: const category = document.querySelector(".mw-category");
+      // const links = [...category.querySelectorAll("a")];
+      // const de = links
+      //   .map((link) => link.textContent)
+      //   .filter((streetName) => streetName.includes("de"));
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      const alphaByLN = people.sort((lastOne, nextOne) => {
+        const [aLast, aFirst] = lastOne.split(", ");
+        const [bLast, bFirst] = nextOne.split(", ");
+        return aLast > bLast ? 1 : -1;
+      });
+      console.log(alphaByLN);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
